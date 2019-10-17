@@ -1,16 +1,19 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
+#include "Cpoint.h"
+
 
 using namespace std;
 
 //Exemple de programme en C ++
 
 //définition d'un type structuré
-typedef struct character {
+/*typedef struct character {
 	pawn* root;
 	capsule_component* capsule;
 	static_mesh* mesh;
-}character;
+}character;*/
 
 /*
 	La poo, permet de représenter une information sous la forme d'une objet incluant les données, mais aussi les méthodes.
@@ -26,7 +29,14 @@ typedef struct character {
 
 int main()
 {
+	CPoint ptMonPoint;
+	int nTemp;
 
+	std::cin >> nTemp;
+	ptMonPoint.setX(nTemp);
+	std::cout<<"X:  "<<ptMonPoint.getX();
 
 	return 0;
+
+	system("pause");
 }

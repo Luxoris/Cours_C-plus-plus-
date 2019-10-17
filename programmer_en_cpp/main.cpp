@@ -11,7 +11,6 @@ using namespace std; //défini les espaces de données (std = standard), on peut u
 //Exemple de programme en C ++
 
 
-
 int main()	//fonction ou procédure qui défini le programme principal
 {
 	//printf("Hello world!\n");
@@ -21,7 +20,7 @@ int main()	//fonction ou procédure qui défini le programme principal
 	ajout : string
 	ajout : boolean
 	
-	les varibales, sont par défaut volatile, static, const, register... => ce sont les classes de stockage
+	les variabales, sont par défaut volatile, static, const, register... => ce sont les classes de stockage
 	*/
 	int i = 0;
 	float x = 0.0;

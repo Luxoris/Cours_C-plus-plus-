@@ -12,18 +12,33 @@ private:	//que dans la classe elle-même
 	int nY;
 	int nZ;
 
+	int* pnX; //exemple pour un cas d'allocation dynamique
+
 protected: //dans la classe et chez les enfants de la classe
 
 public://accessible partout, dans et à l'extérieur de la classe
 	
+	//CONSTRUCTEUR
+	CPoint();
+
+	//DESTRUCTEUR
+	~CPoint();
+
+	CPoint(int nX, int nY, int nZ);
+
+
 	//PROTOTYPE OU DECLARATION DES METHODES DE LA CLASSE
 
 	//assesseurs
 	int getX();
 	int getY();
+	int getZ();
 
 	//mutateurs
 	void setX(int nX);
 	void setY(int nY);
+	void setZ(int nZ);
+
+
 };
 

@@ -30,11 +30,16 @@ using namespace std;
 int main()
 {
 	CPoint ptMonPoint;
+	CPoint ptMonPoint2(3, 5, 8);
 	int nTemp;
 
 	std::cin >> nTemp;
 	ptMonPoint.setX(nTemp);
 	std::cout<<"X:  "<<ptMonPoint.getX();
+
+	std::cout << "X:  " << ptMonPoint2.getX();
+	std::cout << "Y:  " << ptMonPoint2.getY();
+	std::cout << "Z:  " << ptMonPoint2.getZ();
 
 	return 0;
 

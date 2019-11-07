@@ -20,7 +20,7 @@ CPoint::CPoint()
 }
 
 
-//2ème contructeur
+//2Ã¨me contructeur
 CPoint::CPoint(float fltX, float fltY)
 {
 	this->m_fltRho = sqrtf(powf(fltX, 2) + powf(fltY, 2));
@@ -55,14 +55,14 @@ void CPoint::setTheta(float fltTheta)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue la translation d'un point en fonction de ses deux arguments
+//Description		: MÃ©thode qui effectue la translation d'un point en fonction de ses deux arguments
 //
-//Entrée			: float fltX : translation en X
+//EntrÃ©e			: float fltX : translation en X
 //					: float fltY : translation en Y
 //
 //Sortie			:
 //
-//Note				: Passe par les coordonnées polaires, déplace puis enregistre les points en coordonnées polaires.
+//Note				: Passe par les coordonnï¿½es polaires, dï¿½place puis enregistre les points en coordonnï¿½es polaires.
 //
 //*************************************************************************************************************
 void CPoint::deplace(float fltX, float fltY)
@@ -70,7 +70,7 @@ void CPoint::deplace(float fltX, float fltY)
 	float fltXtmp;
 	float fltYtmp;
 
-	//calcul des coordonnées polaires du point déplacé
+	//calcul des coordonnï¿½es polaires du point dï¿½placï¿½
 	fltXtmp = this->abscisse() + fltX;
 	fltYtmp = this->ordonnee() + fltY;
 	
@@ -80,11 +80,11 @@ void CPoint::deplace(float fltX, float fltY)
 
 
 //*************************************************************************************************************
-//Description		: Méthode qui retourne l'ordonnée du point
+//Description		: MÃ©thode qui retourne l'ordonnÃ©e du point
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
-//Sortie			: float : Ordonnée du point
+//Sortie			: float : Ordonnï¿½e du point
 //
 //Note				: y = rho * sin (theta)
 //
@@ -95,9 +95,9 @@ float CPoint::ordonnee()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui retourne l'abscisse du point.
+//Description		: MÃ©thode qui retourne l'abscisse du point.
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
 //Sortie			: float : Abscisse du point
 //
@@ -110,11 +110,11 @@ float CPoint::abscisse()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue une homothétie dont le rapport est fourni en argument.
+//Description		: MÃ©thode qui effectue une homothÃ©tie dont le rapport est fourni en argument.
 //
-//Entrée			: float fltK : Le coefficient d'homothétie
+//EntrÃ©e			: float fltK : Le coefficient d'homothÃ©tie
 //					
-//Sortie			: Les valeurs des membres du point modifiés après homothétie.
+//Sortie			: Les valeurs des membres du point modifiÃ©s aprÃ¨s homothÃ©tie.
 //
 //Note				:
 //
@@ -124,21 +124,21 @@ void CPoint::homothetie(float fltK)
 	float fltXtmp;
 	float fltYtmp;
 
-	//calcul des coordonnées polaires du point déplacé
+	//calcul des coordonnï¿½es polaires du point dï¿½placï¿½
 	fltXtmp = fltK * this->abscisse();
 	fltYtmp = fltK * this->ordonnee();
 
-	//enregistrement des valeurs en coordonnées polaires
+	//enregistrement des valeurs en coordonnï¿½es polaires
 	this->setRho(sqrtf(powf(fltXtmp, 2) + powf(fltYtmp, 2)));
 	this->setTheta((atan2f(fltYtmp, fltXtmp) * 180) / PI);
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue une rotation du point avec un ancrage à l'origine à partir d'un angle donné.
+//Description		: MÃ©thode qui effectue une rotation du point avec un ancrage Ã  l'origine Ã  partir d'un angle donnÃ©.
 //
-//Entrée			: float fltAngle : L'angle de rotation
+//EntrÃ©e			: float fltAngle : L'angle de rotation
 //					
-//Sortie			: Les valeurs des membres du point modifiés après rotation.
+//Sortie			: Les valeurs des membres du point modifiï¿½s aprï¿½s rotation.
 //
 //Note				: Le point d'ancrage est l'orgine O(0,0)
 //						j'applique la formule x' = x * cos(Angle) - y * sin(Angle) et y' = x * sin(Angle) + y * cos(Angle)
@@ -150,16 +150,16 @@ void CPoint::rotation(float fltAngle)
 	float fltX = this->abscisse()*cosf(fltAngleRadian)-this->ordonnee()*sinf(fltAngleRadian);
 	float fltY = this->abscisse()*sinf(fltAngleRadian) - this->ordonnee() * cosf(fltAngleRadian);
 	
-	//Enregistrement en coordonnées polaires
+	//Enregistrement en coordonnï¿½es polaires
 	this->setRho(sqrtf(powf(fltX, 2) + powf(fltY, 2)));
 	this->setTheta((atan2f(fltY, fltX) * 180) / PI);
 }
 
 
 //*************************************************************************************************************
-//Description		: Méthode qui renvoie rho (la distance à l'origine du point)
+//Description		: MÃ©thode qui renvoie rho (la distance Ã  l'origine du point)
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
 //Sortie			: float : La distance rho.
 //
@@ -172,11 +172,11 @@ float CPoint::rho()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui renvoie theta (l'angle par rapport à l'origine du point) en degrée.
+//Description		: MÃ©thode qui renvoie theta (l'angle par rapport Ã  l'origine du point) en degrÃ©e.
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
-//Sortie			: float : L'angle theta en degrée.
+//Sortie			: float : L'angle theta en degrÃ©e.
 //
 //Note				: 
 //

@@ -20,7 +20,7 @@ CPoint::CPoint()
 }
 
 
-//2ème contructeur
+//2Ã¨me contructeur
 CPoint::CPoint(float fltX, float fltY)
 {
 
@@ -56,9 +56,9 @@ void CPoint::setY(float fltY)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue la translation d'un point en fonction de ses deux arguments
+//Description		: MÃ©thode qui effectue la translation d'un point en fonction de ses deux arguments
 //
-//Entrée			: float fltX : translation en X
+//EntrÃ©e			: float fltX : translation en X
 //					: float fltY : translation en Y
 //
 //Sortie			:
@@ -74,11 +74,11 @@ void CPoint::deplace(float fltX, float fltY)
 
 
 //*************************************************************************************************************
-//Description		: Méthode qui retourne l'ordonnée du point
+//Description		: MÃ©thode qui retourne l'ordonnÃ©e du point
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
-//Sortie			: float : Ordonnée du point (m_fltY)
+//Sortie			: float : OrdonnÃ©e du point (m_fltY)
 //
 //Note				:
 //
@@ -89,9 +89,9 @@ float CPoint::ordonnee()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui retourne l'abscisse du point.
+//Description		: MÃ©thode qui retourne l'abscisse du point.
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
 //Sortie			: float : Abscisse du point (m_fltX)
 //
@@ -104,11 +104,11 @@ float CPoint::abscisse()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue une homothétie dont le rapport est fourni en argument.
+//Description		: MÃ©thode qui effectue une homothÃ©tie dont le rapport est fourni en argument.
 //
-//Entrée			: float fltK : Le coefficient d'homothétie
+//EntrÃ©e			: float fltK : Le coefficient d'homothÃ©tie
 //					
-//Sortie			: Les valeurs des membres du point modifiés après homothétie.
+//Sortie			: Les valeurs des membres du point modifiÃ©s aprÃ¨s homothÃ©tie.
 //
 //Note				:
 //
@@ -120,11 +120,11 @@ void CPoint::homothetie(float fltK)
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui effectue une rotation du point avec un ancrage à l'origine à partir d'un angle donné.
+//Description		: MÃ©thode qui effectue une rotation du point avec un ancrage Ã  l'origine Ã  partir d'un angle donnÃ©.
 //
-//Entrée			: float fltAngle : L'angle de rotation
+//EntrÃ©e			: float fltAngle : L'angle de rotation
 //					
-//Sortie			: Les valeurs des membres du point modifiés après rotation
+//Sortie			: Les valeurs des membres du point modifiÃ©s aprÃ¨s rotation
 //
 //Note				: Le point d'ancrage est l'orgine O(0,0)
 //						j'applique la formule x' = x * cos(Angle) - y * sin(Angle) et y' = x * sin(Angle) + y * cos(Angle)
@@ -142,13 +142,13 @@ void CPoint::rotation(float fltAngle)
 
 
 //*************************************************************************************************************
-//Description		: Méthode qui renvoie rho (la distance à l'origine du point)
+//Description		: MÃ©thode qui renvoie rho (la distance Ã  l'origine du point)
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
 //Sortie			: float : La distance rho.
 //
-//Note				: J'applique le théorème de Pythagore : tho = sqrt(x^2 + y^2)
+//Note				: J'applique le thÃ©orÃ¨me de Pythagore : tho = sqrt(x^2 + y^2)
 //
 //*************************************************************************************************************
 float CPoint::rho()
@@ -157,16 +157,16 @@ float CPoint::rho()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui renvoie theta (l'angle par rapport à l'origine du point) en degrée.
+//Description		: MÃ©thode qui renvoie theta (l'angle par rapport Ã  l'origine du point) en degrÃ©e.
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
-//Sortie			: float : L'angle theta en degrée.
+//Sortie			: float : L'angle theta en degrÃ©e.
 //
 //Note				: J'applique la formule theta = atan2(y,x). Src : wikipedia.
 //
 //*************************************************************************************************************
 float CPoint::theta()
 {
-	return (atan2f(this->getX(), this->getY())*180) / PI;
+	return (atan2f(this->getY(), this->getX())*180) / PI;
 }

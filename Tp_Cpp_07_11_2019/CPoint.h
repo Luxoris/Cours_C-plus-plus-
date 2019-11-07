@@ -3,8 +3,8 @@
 //
 //Classe				: Cpoint
 //Description			: Gestion simple d'un point dans un plan
-//Attributs				: m_fltX : coordonnée X d'un point dans un repère cartésien
-//						: m_flt_y : coordonnée Y d'un point dans un repère cartésien
+//Attributs				: m_fltX : coordonnÃ©e X d'un point dans un repÃ¨re cartÃ©sien
+//						: m_flt_y : coordonnÃ©e Y d'un point dans un repÃ¨re cartÃ©sien
 //
 //Notes					:
 //
@@ -19,13 +19,11 @@
 class CPoint
 {
 private:
-	float m_fltRho;
-	float m_fltTheta;
+	static int nCptPoint;
+	float m_fltX;
+	float m_fltY;
 
 public:
-	//Declaration des constantes de classe.
-	const float PI = 3.14159;
-
 	//CONSTRUCTEUR
 	CPoint();
 
@@ -35,20 +33,16 @@ public:
 	//PROTOTYPE OU DECLARATION DES METHODES DE LA CLASSE
 
 	//assesseurs
-	float getRho();
-	float getTheta();
+	float getX();
+	float getY();
+	static int getCptPoint();
 
 	//mutateurs
-	void setRho(float fltRho);
-	void setTheta(float fltTheta);
+	void setX(float fltX);
+	void setY(float fltY);
 
 	//methodes
 	void deplace(float fltX, float fltY);
-	float ordonnee();
-	float abscisse();
-	void homothetie(float fltK);
-	void rotation(float fltAngle);
-	float rho();
-	float theta();
+	void affiche();
 };
 #endif

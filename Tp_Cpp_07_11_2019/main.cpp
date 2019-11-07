@@ -4,33 +4,28 @@
 #include "Cpoint.h"
 
 
-using namespace std; //permet de ne pas avoir à préciser le std
+using namespace std; //permet de ne pas avoir Ã  prÃ©ciser le std
 
 
 int main()
 {
-	//Déclaration et instanciation d'un point de test
+	//DÃ©claration et instanciation d'un point de test
 	CPoint ptPoint(1.2, 5.4);
+	//Affichage des coordonnÃ©es du point
+	ptPoint.affiche();
 
-	//affichage des coordonnées du point
-	std::cout << "X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
-	//Décalage des coordonnées du point
+	//DÃ©calage des coordonnÃ©es du point
 	ptPoint.deplace(1.0, -5.6);
 
-	//affichage des coordonnées du point
-	std::cout << "X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
+	//Affichage des nouvelles coordonnÃ©es
+	ptPoint.affiche();
 
-	//Homothétie
-	ptPoint.homothetie(5.1);
-	std::cout << "Homothétie : X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
-	
-	//Rotation
-	ptPoint.rotation(12.5);
-	std::cout << "Rotation : X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
+	//creation d'un nouveau point
+	CPoint ptPoint2(1.4, 5.6);
 
-	//Traduction en coordonnées polaires :
-	std::cout << "Rotation : rho: " << ptPoint.rho() << " theta: " << ptPoint.theta() << "degree" <<std::endl;
+	//affichage du nouveau point
+	ptPoint2.affiche();
 
-	//Système pause
+	//SystÃ¨me pause
 	system("pause");
 }

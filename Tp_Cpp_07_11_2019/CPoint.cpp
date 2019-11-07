@@ -10,7 +10,6 @@
 
 #include "Cpoint.h"
 #include <stdlib.h>
-#include <iostream>
 
 //consructeur
 CPoint::CPoint()
@@ -74,18 +73,33 @@ void CPoint::deplace(float fltX, float fltY)
 
 
 //*************************************************************************************************************
-//Description		: Méthode qui affiche dans le std::cout les coordonnées du point.
+//Description		: Méthode qui retourne l'ordonnée du point
 //
 //Entrée			: 
 //					
-//Sortie			: Les coordonnées du point dans le std::cout
+//Sortie			: float : Ordonnée du point (m_fltY)
 //
 //Note				:
 //
 //*************************************************************************************************************
-void CPoint::affiche()
+float CPoint::ordonnee()
 {
-	std::cout << "X: " << std::fixed << this->getX() << " Y: " << std::fixed << this->getY() << std::endl;
+	return this->getY();
+}
+
+//*************************************************************************************************************
+//Description		: Méthode qui retourne l'abscisse du point.
+//
+//Entrée			: 
+//					
+//Sortie			: float : Abscisse du point (m_fltX)
+//
+//Note				:
+//
+//*************************************************************************************************************
+float CPoint::abscisse()
+{
+	return this->getX();
 }
 
 

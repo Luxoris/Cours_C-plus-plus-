@@ -11,13 +11,14 @@ int main()
 {
 	//Déclaration et instanciation d'un point de test
 	CPoint ptPoint(1.2, 5.4);
-	//Affichage des coordonnées du point
-	ptPoint.affiche();
 
+	//affichage des coordonnées du point
+	std::cout << "X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
 	//Décalage des coordonnées du point
 	ptPoint.deplace(1.0, -5.6);
-	//Affichage des nouvelles coordonnées
-	ptPoint.affiche();
+
+	//affichage des coordonnées du point
+	std::cout << "X: " << ptPoint.abscisse() << " Y: " << ptPoint.ordonnee() << std::endl;
 
 	//Système pause
 	system("pause");

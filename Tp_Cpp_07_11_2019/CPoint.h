@@ -43,6 +43,7 @@ public:
 
 	//methodes
 	void deplace(float fltX, float fltY);
-	void affiche();
+	float ordonnee();
+	float abscisse();
 };
 #endif

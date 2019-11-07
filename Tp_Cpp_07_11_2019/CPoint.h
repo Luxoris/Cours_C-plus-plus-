@@ -19,12 +19,13 @@
 class CPoint
 {
 private:
-
-
 	float m_fltX;
 	float m_fltY;
 
 public:
+	//Declaration des constantes de classe.
+	const float PI = 3.14159;
+
 	//CONSTRUCTEUR
 	CPoint();
 
@@ -45,5 +46,9 @@ public:
 	void deplace(float fltX, float fltY);
 	float ordonnee();
 	float abscisse();
+	void homothetie(float fltK);
+	void rotation(float fltAngle);
+	float rho();
+	float theta();
 };
 #endif

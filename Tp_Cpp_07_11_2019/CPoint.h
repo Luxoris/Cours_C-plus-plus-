@@ -19,8 +19,8 @@
 class CPoint
 {
 private:
-	float m_fltX;
-	float m_fltY;
+	float m_fltRho;
+	float m_fltTheta;
 
 public:
 	//Declaration des constantes de classe.
@@ -35,12 +35,12 @@ public:
 	//PROTOTYPE OU DECLARATION DES METHODES DE LA CLASSE
 
 	//assesseurs
-	float getX();
-	float getY();
+	float getRho();
+	float getTheta();
 
 	//mutateurs
-	void setX(float fltX);
-	void setY(float fltY);
+	void setRho(float fltRho);
+	void setTheta(float fltTheta);
 
 	//methodes
 	void deplace(float fltX, float fltY);

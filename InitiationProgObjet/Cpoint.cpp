@@ -1,6 +1,19 @@
 #include "Cpoint.h"
 #include <stdlib.h>
 
+
+//destructeur
+CPoint::~CPoint()
+{
+	//on ne met rien car toutes les variables sont statiques (cad dans la pile)
+
+
+	//cas alloc dynamique
+	//free(this->pnX);
+	delete pnX;
+}
+
+//consructeur
 CPoint::CPoint()
 {
 	this->nX = 0;
@@ -12,16 +25,8 @@ CPoint::CPoint()
 	*pnX = 0;
 }
 
-CPoint::~CPoint()
-{
-	//on ne met rien car toutes les variables sont statiques (cad dans la pile)
 
-
-	//cas alloc dynamique
-	//free(this->pnX);
-	delete pnX;
-}
-
+//2ème contructeur
 CPoint::CPoint(int nX, int nY, int nZ)
 {
 
@@ -33,6 +38,7 @@ CPoint::CPoint(int nX, int nY, int nZ)
 	
 }
 
+//getter
 int CPoint::getX()
 {
 	return this->nX;
@@ -48,6 +54,7 @@ int CPoint::getZ()
 	return this->nZ;
 }
 
+//setter
 void CPoint::setX(int nX)
 {
 	this->nX = nX;

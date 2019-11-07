@@ -4,7 +4,7 @@
 #include "Cpoint.h"
 
 
-using namespace std;
+using namespace std; //permet de ne pas avoir à préciser le std
 
 //Exemple de programme en C ++
 
@@ -19,8 +19,8 @@ using namespace std;
 	La poo, permet de représenter une information sous la forme d'une objet incluant les données, mais aussi les méthodes.
 	Le cpp n'est pas un langage de poo pur car tout n'est pas objet.
 
-	Il n'est pas possible d'agit sur les données d'un objet, il est nécessaire de passer par ses méthodes,
-	on traduit parfois cela en disant que l'appelel d'une méthode est un message envoyé à l'objet.
+	Il n'est pas possible d'agir sur les données d'un objet, il est nécessaire de passer par ses méthodes,
+	on traduit parfois cela en disant que l'appelle d'une méthode est un message envoyé à l'objet.
 
 	Le grand mérite de l'encapsulation est que vu de l'extérieur,
 	un objet se caractérise uniquement par les spécificaton de ces méthodes, on fait abstraction des données,
@@ -33,7 +33,7 @@ int main()
 	CPoint ptMonPoint2(3, 5, 8);
 	int nTemp;
 
-	std::cin >> nTemp;
+	cin >> nTemp;
 	ptMonPoint.setX(nTemp);
 	std::cout<<"X:  "<<ptMonPoint.getX();
 

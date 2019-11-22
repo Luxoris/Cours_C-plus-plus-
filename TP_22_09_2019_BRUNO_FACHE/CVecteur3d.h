@@ -31,6 +31,36 @@ public:
 		this->m_fltY = fltY;
 		this->m_fltZ = fltZ;
 	}
+
+	//getters
+	inline float getX() {
+		return this->m_fltX;
+	}
+
+	inline float getY() {
+		return this->m_fltZ;
+	}
+
+	inline float getZ() {
+		return this->m_fltZ;
+	}
+
+	//setters
+	inline void setX(const float fltX) {
+		this->m_fltX = fltX;
+	}
+
+	inline void setY(const float fltY) {
+		this->m_fltY = fltY;
+	}
+
+	inline void setZ(const float fltZ) {
+		this->m_fltZ = fltZ;
+	}
+
+	//METHODES
+
+	bool coincide(const CVecteur3d Vecteur) const; //passage par valeur
 };
 #endif // !CVECTEUR3D
 

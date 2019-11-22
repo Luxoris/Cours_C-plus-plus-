@@ -8,4 +8,22 @@
 
 #include "CVecteur3d.h"
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//METHODES
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//*************************************************************************************************************
+//Description		: Méthode qui effectue vérifie si deux points coincides.
+//
+//Entrée			: Le point en passage par valeurs.
+//
+//
+//Sortie			: Un bool true si coincide, false sinon.
+//
+//Note				:
+//
+//*************************************************************************************************************
+bool CVecteur3d::coincide(const CVecteur3d Vecteur) const
+{
+	return (this->m_fltX == Vecteur.m_fltX && this->m_fltY == Vecteur.m_fltY && this->m_fltZ == Vecteur.m_fltZ);
+}

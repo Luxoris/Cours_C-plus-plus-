@@ -26,8 +26,6 @@ private:
 
 public:
 	//CONSTRUCTEURS
-	CVecteur3d();
-	//constructeurs surdéfinies
 	CVecteur3d(float, float, float);
 };
 #endif // !CVECTEUR3D

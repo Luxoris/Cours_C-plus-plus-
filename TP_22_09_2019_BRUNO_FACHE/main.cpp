@@ -19,7 +19,7 @@ using namespace std; //permet de ne pas avoir à préciser le std
 int main()
 {
 	CVecteur3d vecteur();
-	CVecteur3d vecteur(1,2,3);
+	CVecteur3d vecteur2(1,2,3);
 
 	//Système pause
 	system("pause");

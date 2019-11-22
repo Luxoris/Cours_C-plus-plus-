@@ -9,14 +9,8 @@
 #include "CVecteur3d.h"
 
 //CONSTRUCTEURS
-CVecteur3d::CVecteur3d()
-{
-	this->m_fltX = 0;
-	this->m_fltY = 0;
-	this->m_fltZ = 0;
-}
 
-CVecteur3d::CVecteur3d(float fltX, float fltY, float fltZ)
+CVecteur3d::CVecteur3d(float fltX=0, float fltY=0, float fltZ=0)
 {
 	this->m_fltX = fltX;
 	this->m_fltY = fltY;

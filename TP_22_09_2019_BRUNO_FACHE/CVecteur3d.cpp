@@ -23,7 +23,39 @@
 //Note				:
 //
 //*************************************************************************************************************
-bool CVecteur3d::coincide(const CVecteur3d Vecteur) const
+/*bool CVecteur3d::coincide(const CVecteur3d Vecteur) const
+{
+	return (this->m_fltX == Vecteur.m_fltX && this->m_fltY == Vecteur.m_fltY && this->m_fltZ == Vecteur.m_fltZ);
+}*/
+
+//*************************************************************************************************************
+//Description		: Méthode qui effectue vérifie si deux points coincides.
+//
+//Entrée			: Le point en passage par adresse.
+//
+//
+//Sortie			: Un bool true si coincide, false sinon.
+//
+//Note				:
+//
+//*************************************************************************************************************
+bool CVecteur3d::coincide(const CVecteur3d * pVecteur) const
+{
+	return (this->m_fltX == pVecteur->m_fltX && this->m_fltY == pVecteur->m_fltY && this->m_fltZ == pVecteur->m_fltZ);
+}
+
+//*************************************************************************************************************
+//Description		: Méthode qui effectue vérifie si deux points coincides.
+//
+//Entrée			: Le point en passage par référence.
+//
+//
+//Sortie			: Un bool true si coincide, false sinon.
+//
+//Note				:
+//
+//*************************************************************************************************************
+bool CVecteur3d::coincide(const CVecteur3d &Vecteur) const
 {
 	return (this->m_fltX == Vecteur.m_fltX && this->m_fltY == Vecteur.m_fltY && this->m_fltZ == Vecteur.m_fltZ);
 }

@@ -60,7 +60,9 @@ public:
 
 	//METHODES
 
-	bool coincide(const CVecteur3d Vecteur) const; //passage par valeur
+	//bool coincide(const CVecteur3d Vecteur) const; //passage par valeur
+	bool coincide(const CVecteur3d *pVecteur) const; //passage par adresse
+	bool coincide(const CVecteur3d &Vecteur) const; //passage par référence
 };
 #endif // !CVECTEUR3D
 

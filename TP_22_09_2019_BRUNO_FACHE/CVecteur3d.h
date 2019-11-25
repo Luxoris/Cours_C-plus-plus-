@@ -69,8 +69,9 @@ public:
 	bool coincide(const CVecteur3d &Vecteur) const; //passage par référence
 
 	float norme() const; 
-	CVecteur3d normax(CVecteur3d Vecteur2) const; //passage par valeur;
-
+	//CVecteur3d normax(CVecteur3d Vecteur2) const; //passage par valeur;
+	const CVecteur3d & normax(CVecteur3d& Vecteur2) const; //passage par adresse + renvoie par adresse;
+	const CVecteur3d * normax(CVecteur3d* Vecteur2) const; //passage par référence + renvoie par référence;
 
 	//METHODES D'AFFICHAGE
 	std::string toString() const;

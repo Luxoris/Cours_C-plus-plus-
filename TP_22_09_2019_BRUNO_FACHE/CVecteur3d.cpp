@@ -89,7 +89,7 @@ float CVecteur3d::norme() const
 //Note				: Passage par Valeur //Si la norme est la même, renvoie un vecteur dont les membres valent 0.
 //
 //*************************************************************************************************************
-CVecteur3d CVecteur3d::normax(CVecteur3d Vecteur2) const
+/*CVecteur3d CVecteur3d::normax(CVecteur3d Vecteur2) const
 {
 	if (this->norme() > Vecteur2.norme()) {
 		return *this;
@@ -105,9 +105,71 @@ CVecteur3d CVecteur3d::normax(CVecteur3d Vecteur2) const
 			return Vecteur2;
 		}
 	}
+}*/
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie la référence du vecteur qui a la plus grande norme.
+//
+//Entrée			: CVecteur3d& Vecteur 2 : La référence du deuxième vecteur à comparer.
+//
+//
+//Sortie			: CVecteur3d correspondant à la référence du vecteur qui a la plus grande norme.
+//
+//Note				: Passage par référence //Si la norme est la même, en cas d'égalité, renvoie la référence du vecteur appelant la méthode.
+//
+//*************************************************************************************************************
+const CVecteur3d& CVecteur3d::normax(CVecteur3d& Vecteur2) const
+{
+	if (this->norme() > Vecteur2.norme()) {
+		return *this;
+	}
+	else
+	{
+		if (this->norme() == Vecteur2.norme())
+		{
+			//return *(new CVecteur3d(0, 0, 0));	//pas possible car l'objet n'existe que dans la procédure, (les valeurs retournés par l'affichage seront aléatoires)
+													//possibilité de créer un membre de classe static ayant pour valeur un vecteur avec des valeurs nulles et de renvoyé sa référence.
+													//ou d'utiliser un gestion des exceptions
+			return *this;
+		}
+		else
+		{
+			return Vecteur2;
+		}
+	}
 }
 
-
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie l'adresse du vecteur qui a la plus grande norme.
+//
+//Entrée			: CVecteur3d* Vecteur 2 : L'adresse du deuxième vecteur à comparer.
+//
+//
+//Sortie			: CVecteur3d correspondant à l'adresse du vecteur qui a la plus grande norme.
+//
+//Note				: Passage par référence //Si la norme est la même, en cas d'égalité, renvoie l'adresse du vecteur appelant la méthode.
+//
+//*************************************************************************************************************
+const CVecteur3d* CVecteur3d::normax(CVecteur3d* Vecteur2) const
+{
+	if (this->norme() > Vecteur2->norme()) {
+		return this;
+	}
+	else
+	{
+		if (this->norme() == Vecteur2->norme())
+		{
+			//return (new CVecteur3d(0, 0, 0)); //pas possible car l'objet n'existe que dans la procédure, (les valeurs retournés par l'affichage seront aléatoires)
+												//possibilité de créer un membre de classe static ayant pour valeur un vecteur avec des valeurs nulles et de renvoyé sa référence.
+												//ou d'utiliser un gestion des exceptions
+			return this;
+		}
+		else
+		{
+			return Vecteur2;
+		}
+	}
+}
 
 
 //*************************************************************************************************************

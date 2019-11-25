@@ -1,40 +1,35 @@
 //***************************************************************************************************
 //Fichier*				: main.cpp
 //
-//Description		: Programme qui test les fonctions de la classe CVecteur3d
+//Description		: Programme qui test les fonctions de la classe CPoint
 //
 //Note				:
 //
 //***************************************************************************************************
-//22-11-2019 B. FACHE Version Initiale.
+//25-11-2019 B. FACHE Version Initiale.
 //***************************************************************************************************
 
 #include <iostream>
-#include "CVecteur3d.h"
+#include "CPoint.h"
 
 
 using namespace std; //permet de ne pas avoir à preciser le std
 
 int main()
 {
-	//DECLARATION ET INSTANCIATION.
-	CVecteur3d vVecteur1;				//appel du contructeur avec valeurs = 0 par défaut
-	CVecteur3d vVecteur2(1, 2, 3);		//appel du contructeur avec valeurs passées en argument.
-	CVecteur3d vVecteur3(vVecteur2);	//appel du contructeur par recopie
-	
-	//Test des fonction d'affichage :
-	std::cout << std::endl << "Test des fonctions d'affichage (soit trois vecteurs differents) : " << std::endl;
-	vVecteur1.affiche();
-	vVecteur2.affiche();
-	vVecteur3.affiche();
-
-	//Test du produit Scalaire :
-	std::cout << std::endl << "Produit scalaire du vecteur 2 et 3 : " << vVecteur2.produitScalaire(vVecteur3) << std::endl;
-
-	//Test de la somme des deux vecteurs.
-	std::cout << std::endl << "Somme du vecteur 2 et 3 : " << vVecteur2 .somme(vVecteur3).toString() << std::endl;
-	
-	
+	std::cout << "Nombre de points crées : " << CPoint::nombre() << std::endl;
+	CPoint ptPoint1; //constructeur avec valeurs par défaut nulle
+	ptPoint1.affiche();
+	std::cout << "Nombre de points crées : " << CPoint::nombre() << std::endl;
+	CPoint ptPoint2(1,5);
+	ptPoint2.affiche();
+	std::cout << "Nombre de points crées : " << CPoint::nombre() << std::endl;
+	CPoint *ptPoint3 = new CPoint(1,6);	
+	ptPoint3->affiche();
+	std::cout << "Nombre de points crées : " << CPoint::nombre() << std::endl;
+	delete ptPoint3;
+	std::cout << "Destruction du point 3 :" << std::endl;
+	std::cout << "Nombre de points crées : " << CPoint::nombre() << std::endl;
 
 	//Système pause
 	system("pause");

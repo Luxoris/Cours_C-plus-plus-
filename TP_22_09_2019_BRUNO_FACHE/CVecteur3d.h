@@ -15,6 +15,10 @@
 #pragma once
 #ifndef CVECTEUR3D_H
 #define CVECTEUR3D_H
+#include <cmath>
+#include <string>
+#include <iostream>
+
 class CVecteur3d
 {
 private:
@@ -33,15 +37,15 @@ public:
 	}
 
 	//getters
-	inline float getX() {
+	inline float getX() const {
 		return this->m_fltX;
 	}
 
-	inline float getY() {
+	inline float getY() const{
 		return this->m_fltZ;
 	}
 
-	inline float getZ() {
+	inline float getZ() const{
 		return this->m_fltZ;
 	}
 
@@ -63,6 +67,14 @@ public:
 	//bool coincide(const CVecteur3d Vecteur) const; //passage par valeur
 	bool coincide(const CVecteur3d *pVecteur) const; //passage par adresse
 	bool coincide(const CVecteur3d &Vecteur) const; //passage par référence
+
+	float norme() const; 
+	CVecteur3d normax(CVecteur3d Vecteur2) const; //passage par valeur;
+
+
+	//METHODES D'AFFICHAGE
+	std::string toString() const;
+	void affiche() const;
 };
 #endif // !CVECTEUR3D
 

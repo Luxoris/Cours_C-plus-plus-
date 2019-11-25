@@ -59,3 +59,89 @@ bool CVecteur3d::coincide(const CVecteur3d &Vecteur) const
 {
 	return (this->m_fltX == Vecteur.m_fltX && this->m_fltY == Vecteur.m_fltY && this->m_fltZ == Vecteur.m_fltZ);
 }
+
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie la norme d'un vecteur.
+//
+//Entrée			: 
+//
+//
+//Sortie			: float correspondant à la norme.
+//
+//Note				: La norme d'un vecteur tridimensionnel se calcul avec la formule sqrt(x² + y² + z²). 
+//
+//*************************************************************************************************************
+float CVecteur3d::norme() const
+{
+	return sqrtf(m_fltX * m_fltX + m_fltY * m_fltY + m_fltZ * m_fltZ);
+}
+
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie les valeurs du vecteur qui a la plus grande norme.
+//
+//Entrée			: CVecteur3d Vecteur 2 : Le deuxième vecteur à comparer.
+//
+//
+//Sortie			: CVecteur3d correspondant aux valeurs du Vecteur qui a la plus grande norme.
+//
+//Note				: Passage par Valeur //Si la norme est la même, renvoie un vecteur dont les membres valent 0.
+//
+//*************************************************************************************************************
+CVecteur3d CVecteur3d::normax(CVecteur3d Vecteur2) const
+{
+	if (this->norme() > Vecteur2.norme()) {
+		return *this;
+	}
+	else
+	{
+		if (this->norme() == Vecteur2.norme())
+		{
+			return CVecteur3d(0, 0, 0);
+		}
+		else
+		{
+			return Vecteur2;
+		}
+	}
+}
+
+
+
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie la chaine correspondant aux valeurs du vecteur CVecteur3D
+//
+//Entrée			:
+//
+//
+//Sortie			: std::string : La chaine avec les valeurs de l'objet.
+//
+//Note				: 
+//
+//*************************************************************************************************************
+std::string CVecteur3d::toString() const
+{
+	return "CVecteur3d < "
+		+ std::to_string(this->m_fltX) + " , "
+		+ std::to_string(this->m_fltY) + " , "
+		+ std::to_string(this->m_fltZ) + " >";
+}
+
+
+//*************************************************************************************************************
+//Description		: Méthode qui affiche les valeurs d'un vecteur CVecteur3D
+//
+//Entrée			:
+//
+//
+//Sortie			: Les valeurs affichées dans le std::cout;
+//
+//Note				: 
+//
+//*************************************************************************************************************
+void CVecteur3d::affiche() const
+{
+	std::cout << this->toString() <<std::endl;
+}

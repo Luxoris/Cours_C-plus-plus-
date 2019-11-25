@@ -76,6 +76,10 @@ public:
 	//METHODES D'AFFICHAGE
 	std::string toString() const;
 	void affiche() const;
+
+	//METHODES DE CALCUL
+	CVecteur3d somme(CVecteur3d& Vecteur2) const;
+	float produitScalaire(CVecteur3d& Vecteur2) const;
 };
 #endif // !CVECTEUR3D
 

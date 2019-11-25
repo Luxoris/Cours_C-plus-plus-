@@ -185,7 +185,7 @@ const CVecteur3d* CVecteur3d::normax(CVecteur3d* Vecteur2) const
 //*************************************************************************************************************
 std::string CVecteur3d::toString() const
 {
-	return "CVecteur3d < "
+	return "< "
 		+ std::to_string(this->m_fltX) + " , "
 		+ std::to_string(this->m_fltY) + " , "
 		+ std::to_string(this->m_fltZ) + " >";
@@ -206,4 +206,36 @@ std::string CVecteur3d::toString() const
 void CVecteur3d::affiche() const
 {
 	std::cout << this->toString() <<std::endl;
+}
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie la somme du Vecteur avec un autre Vecteur3d
+//
+//Entrée			: CVecteur3d Vecteur2 : Vecteur à ajouter.
+//
+//
+//Sortie			: CVecteur3d correspondant au résultat de l'opération.
+//
+//Note				: Formule => Vecteur1(x1, y1, y2) + Vecteur2(x2, y2, z2) = Vecteur3(x1+x2, y1+y2, z1+z2)
+//
+//*************************************************************************************************************
+CVecteur3d CVecteur3d::somme(CVecteur3d& Vecteur2) const
+{
+	return CVecteur3d(this->m_fltX+Vecteur2.m_fltX, this->m_fltY + Vecteur2.m_fltY, this->m_fltZ + Vecteur2.m_fltZ);
+}
+
+//*************************************************************************************************************
+//Description		: Méthode qui renvoie le produit scalaire du vecteur avec un autre Vecteur3d
+//
+//Entrée			: CVecteur3d Vecteur2 : Vecteur avec lequel le produit scalaire est effectué.
+//
+//
+//Sortie			: CVecteur3d correspondant au résultat de l'opération.
+//
+//Note				: Formule => Vecteur1(x1, y1, y2) . Vecteur2(x2, y2, z2) =  x1*x2 + y1*y2 + z1*z2
+//
+//*************************************************************************************************************
+float CVecteur3d::produitScalaire(CVecteur3d& Vecteur2) const
+{
+	return this->m_fltX*Vecteur2.m_fltX + this->m_fltY * Vecteur2.m_fltY + this->m_fltZ * Vecteur2.m_fltZ;
 }

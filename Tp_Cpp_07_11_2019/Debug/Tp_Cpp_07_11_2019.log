@@ -1,0 +1,7 @@
+﻿  CPoint.cpp
+  main.cpp
+C:\Users\fache\OneDrive - Ludus Académie\Documents\Cours\LUDUS BACHELOR\PROG\Git Cours C++\Cours_C-plus-plus-\Tp_Cpp_07_11_2019\main.cpp(13,26): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\fache\OneDrive - Ludus Académie\Documents\Cours\LUDUS BACHELOR\PROG\Git Cours C++\Cours_C-plus-plus-\Tp_Cpp_07_11_2019\main.cpp(18,27): warning C4305: 'argument' : troncation de 'double' à 'float'
+  Génération de code en cours...
+C:\Users\fache\OneDrive - Ludus Académie\Documents\Cours\LUDUS BACHELOR\PROG\Git Cours C++\Cours_C-plus-plus-\Tp_Cpp_07_11_2019\main.cpp(24,27): warning C4305: 'argument' : troncation de 'double' à 'float'
+  Tp_Cpp_07_11_2019.vcxproj -> C:\Users\fache\OneDrive - Ludus Académie\Documents\Cours\LUDUS BACHELOR\PROG\Git Cours C++\Cours_C-plus-plus-\Tp_Cpp_07_11_2019\Debug\Tp_Cpp_07_11_2019.exe

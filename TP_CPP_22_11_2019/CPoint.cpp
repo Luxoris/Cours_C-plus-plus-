@@ -30,7 +30,7 @@ bool operator!=(CPoint const& pt1, CPoint const& pt2)
 
 const CPoint operator+(CPoint & pt1, CPoint & pt2)
 {
-	return CPoint(pt1.getX() + pt2.getX(), pt1.getY + pt2.getY);
+	return CPoint(pt1.getX() + pt2.getX(), pt1.getY() + pt2.getY());
 }
 
 

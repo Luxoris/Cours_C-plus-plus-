@@ -18,13 +18,6 @@
 
 class CCercle; //forward déclaration
 
-//surcharge opérateur
-bool operator==(CPoint const& pt1, CPoint const& pt2);
-bool operator!=(CPoint const& pt1, CPoint const& pt2);
-const CPoint operator+(CPoint & pt1, CPoint & pt2);
-
-
-
 class CPoint
 {
 private:
@@ -34,6 +27,7 @@ private:
 	//char* cColor;
 
 public:
+
 	//opérateur de raccourci
 	CPoint operator+=(CPoint& pt2);
 
@@ -75,5 +69,12 @@ public:
 	void affichePointCercle(CCercle &c); //fonction membre de la classe point amie de la classe cercle
 
 	friend void affichePointCercle(CPoint& pt, CCercle& c); //fonction amie de plusieurs classes
+
+	//surcharge opérateur
+	friend bool operator==(CPoint const& pt1, CPoint const& pt2);
+	friend bool operator!=(CPoint const& pt1, CPoint const& pt2);
+	friend const CPoint operator+(CPoint& pt1, CPoint& pt2);
 };
+
+
 #endif

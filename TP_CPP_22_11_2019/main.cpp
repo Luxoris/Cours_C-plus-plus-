@@ -2,6 +2,7 @@
 #include <cmath>
 #include <cstdlib>
 #include "Cpoint.h"
+#include "PointCouleur.h"
 #include "CCercle.h"
 
 
@@ -42,6 +43,9 @@ int main()
 	//FONCTION INDEPENDANTE AMIS DE PLUSIEURS CLASSES
 	affichePointCercle(ptA, c);
 
+
+	PointCouleur pt(1.2f, 1.3f, rouge);
+	pt.affiche();
 	//Système pause
 	system("pause");
 }

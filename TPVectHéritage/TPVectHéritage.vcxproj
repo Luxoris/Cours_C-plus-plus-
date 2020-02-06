@@ -138,11 +138,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CListe.cpp" />
+    <ClCompile Include="CListePoints.cpp" />
+    <ClCompile Include="CPoint.cpp" />
     <ClCompile Include="CVect.cpp" />
     <ClCompile Include="CVectok.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CListe.h" />
+    <ClInclude Include="CListePoints.h" />
+    <ClInclude Include="CPoint.h" />
     <ClInclude Include="CVect.h" />
     <ClInclude Include="CVectok.h" />
   </ItemGroup>

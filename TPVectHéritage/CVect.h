@@ -17,7 +17,7 @@
 #pragma once
 class CVect
 {
-private:
+protected:
 	int m_nNelem;
 	int * m_pnAdr;
 

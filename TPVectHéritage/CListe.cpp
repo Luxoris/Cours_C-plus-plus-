@@ -9,12 +9,12 @@
 #include "CListe.h"
 
 //*************************************************************************************************************
-//Description		: Constructeur qui alloue initialise les valeurs des pointeurs à null
+//Description		: Constructeur qui alloue initialise les valeurs des pointeurs Ã  null
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
-//Sortie			: debut est initialisé à null;
-//					: courant est initialisé à null;
+//Sortie			: debut est initialisÃ© Ã  null;
+//					: courant est initialisÃ© Ã  null;
 //
 //*************************************************************************************************************
 CListe::CListe()
@@ -24,55 +24,56 @@ CListe::CListe()
 }
 
 //*************************************************************************************************************
-//Description		: Destructeur qui parcours tous les éléments de la liste et libère la mémoire.
+//Description		: Destructeur qui parcours tous les Ã©lÃ©ments de la liste et libÃ¨re la mÃ©moire.
 //
-//Entrée			: 
+//EntrÃ©e			: 
 //					
-//Sortie			: Les refs mémoires libérés
+//Sortie			: Les refs mÃ©moires libÃ©rÃ©s
 //
 //*************************************************************************************************************
 CListe::~CListe()
 {
 	if (this->debut != nullptr) {	//si la liste n'est pas vide
-		this->courant = this->debut;	//fait pointer la liste sur le premier élément
+		this->courant = this->debut;	//fait pointer la liste sur le premier Ã©lÃ©ment
 		element* tmp;
-		while (this->courant != nullptr) {	//tant que l'élément courant n'est pas null
-			tmp = this->courant; //retient la ref de l'élément courant
-			this -> courant = this->courant->suivant;	//courant recupere la ref de l'élément suivant
-			delete tmp; //détruit la mémoire de la ref sauvegardée
+		while (this->courant != nullptr) {	//tant que l'Ã©lÃ©ment courant n'est pas null
+			tmp = this->courant; //retient la ref de l'Ã©lÃ©ment courant
+			delete tmp->contenu; //dÃ©truit le contenu de la ref sauvegardÃ©e
+			this -> courant = this->courant->suivant;	//courant recupere la ref de l'Ã©lÃ©ment suivant
+			delete tmp; //dÃ©truit la mÃ©moire de la ref sauvegardÃ©e
 		}
 	}
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui ajoute la référence passée en argument dans la liste.
+//Description		: MÃ©thode qui ajoute la rÃ©fÃ©rence passÃ©e en argument dans la liste.
 //
-//Entrée			: void* contenu : la référence de l'élément
+//EntrÃ©e			: void* contenu : la rÃ©fÃ©rence de l'Ã©lÃ©ment
 //					
-//Sortie			: La référence passée en argument ajouté à la liste.
+//Sortie			: La rÃ©fÃ©rence passÃ©e en argument ajoutÃ© Ã  la liste.
 //
 //*************************************************************************************************************
 void CListe::ajoute(void* contenu)
 {
 	element* elt = new element;
-	elt->suivant = this->debut; //l'élément ajoutée pointe sur le premier élément de la liste
+	elt->suivant = this->debut; //l'Ã©lÃ©ment ajoutÃ©e pointe sur le premier Ã©lÃ©ment de la liste
 	elt->contenu = contenu;
-	this->debut = elt; //le premier element de la lsite devient le nouvel élément
+	this->debut = elt; //le premier element de la lsite devient le nouvel Ã©lÃ©ment
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui fait pointer l'élément courant sur le début de la liste et renvoi la référence du contenu du premier élément de la liste
+//Description		: MÃ©thode qui fait pointer l'Ã©lÃ©ment courant sur le dÃ©but de la liste et renvoi la rÃ©fÃ©rence du contenu du premier Ã©lÃ©ment de la liste
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
-//Sortie			: void* : La référence du contenu du premier élément de la liste
-//					  L'élément courant reçoit la référence du premier élément de la liste
+//Sortie			: void* : La rÃ©fÃ©rence du contenu du premier Ã©lÃ©ment de la liste
+//					  L'Ã©lÃ©ment courant reÃ§oit la rÃ©fÃ©rence du premier Ã©lÃ©ment de la liste
 //
 //*************************************************************************************************************
 void* CListe::premier()
 {
 	this->courant = this->debut;
-	if (!(this->debut==nullptr)) { //si la liste n'est pas vide, renvoie le contenu du premier élément
+	if (!(this->debut==nullptr)) { //si la liste n'est pas vide, renvoie le contenu du premier Ã©lÃ©ment
 		return this->courant->contenu;
 	}
 	else {
@@ -81,17 +82,17 @@ void* CListe::premier()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui fait pointer l'élément courant sur le prochain élément de la liste et renvoi la référence du contenu associé
+//Description		: MÃ©thode qui fait pointer l'Ã©lÃ©ment courant sur le prochain Ã©lÃ©ment de la liste et renvoi la rÃ©fÃ©rence du contenu associÃ©
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
-//Sortie			: void* : La référence du contenu du associé au prochain élément courant
-//					  L'élément courant reçoit la référence du prochaint élément de la liste
+//Sortie			: void* : La rÃ©fÃ©rence du contenu du associÃ© au prochain Ã©lÃ©ment courant
+//					  L'Ã©lÃ©ment courant reÃ§oit la rÃ©fÃ©rence du prochaint Ã©lÃ©ment de la liste
 //
 //*************************************************************************************************************
 void* CListe::prochain()
 {
-	if (!(this->debut==nullptr||this->fini())) { //si la liste n'est pas vide ou que ce n'est pas le dernier élément de la liste, renvoie le contenu du prochain élément
+	if (!(this->debut==nullptr||this->fini())) { //si la liste n'est pas vide ou que ce n'est pas le dernier Ã©lÃ©ment de la liste, renvoie le contenu du prochain Ã©lÃ©ment
 		this->courant = this->courant->suivant;
 		return this->courant->contenu;
 	}
@@ -101,11 +102,11 @@ void* CListe::prochain()
 }
 
 //*************************************************************************************************************
-//Description		: Méthode qui vérifie si l'élément courant est le dernier de la liste
+//Description		: MÃ©thode qui vÃ©rifie si l'Ã©lÃ©ment courant est le dernier de la liste
 //
-//Entrée			:
+//EntrÃ©e			:
 //					
-//Sortie			: int : méthode qui 1 si l'élément courant pointe sur un élément suivant dont la valeur est égalle à nullptr
+//Sortie			: int : mÃ©thode qui 1 si l'Ã©lÃ©ment courant pointe sur un Ã©lÃ©ment suivant dont la valeur est Ã©galle Ã  nullptr
 //
 //*************************************************************************************************************
 int CListe::fini()
